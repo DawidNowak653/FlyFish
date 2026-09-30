@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FLY FISH — Handmade Fishing Lures</title>
+
+    <meta name="description"
+          content="FLY FISH — ręcznie tworzone przynęty wędkarskie. Micro Jigi, Jigi i Streamery.">
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #07100c;
+            color: #f4f1e8;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(7, 16, 12, 0.82);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 999;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            color: #d9bd70;
+        }
+
+        .logo span {
+            color: #f5f0df;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d2d4cb;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d9bd70;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 150px 8% 100px;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 75% 45%,
+                    rgba(128, 111, 47, 0.18),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #07100c,
+                    #0c1811
+                );
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 600px;
+            height: 600px;
+
+            right: -250px;
+            bottom: -300px;
+
+            border-radius: 50%;
+
+            background: #a48739;
+
+            filter: blur(180px);
+
+            opacity: 0.12;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: #d9bd70;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(65px, 10vw, 145px);
+
+            line-height: 0.85;
+
+            letter-spacing: -5px;
+
+            margin-bottom: 35px;
+        }
+
+        .hero h1 span {
+            color: #d9bd70;
+        }
+
+        .hero-description {
+            max-width: 620px;
+
+            color: #a9b0a7;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 16px 28px;
+
+            border-radius: 7px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: #d9bd70;
+            color: #10140e;
+        }
+
+        .button-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 35px rgba(217,189,112,0.2);
+        }
+
+        .button-outline {
+            border: 1px solid #3d493f;
+            color: #e5e6dc;
+        }
+
+        .button-outline:hover {
+            border-color: #d9bd70;
+            color: #d9bd70;
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 120px 8%;
+        }
+
+        .section-header {
+            margin-bottom: 60px;
+        }
+
+        .section-label {
+            color: #d9bd70;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(40px, 6vw, 65px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 18px;
+        }
+
+        .section-header p {
+            max-width: 600px;
+
+            color: #8f9990;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           PRODUCTS
+        ===================================================== */
+
+        .products {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 24px;
+        }
+
+        .product {
+            min-height: 420px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #122119,
+                    #0a120d
+                );
+
+            border: 1px solid #26372b;
+
+            transition: 0.4s;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+
+            border-color: #8c773d;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35);
+        }
+
+        .product-image {
+            height: 270px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 80px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(217,189,112,0.12),
+                    transparent 60%
+                );
+        }
+
+        .product-info {
+            padding: 30px;
+        }
+
+        .product-info h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            color: #8f9990;
+            line-height: 1.6;
+        }
+
+        .product-link {
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #d9bd70;
+
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 500px;
+
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(217,189,112,0.15),
+                    transparent 55%
+                ),
+                #0d1912;
+
+            border: 1px solid #26372b;
+
+            font-size: 150px;
+        }
+
+        .about-text h2 {
+            font-size: 48px;
+
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            color: #98a198;
+
+            line-height: 1.9;
+
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            margin-top: 30px;
+
+            padding-left: 20px;
+
+            border-left: 3px solid #d9bd70;
+
+            color: #d9bd70;
+
+            font-style: italic;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           VALUES
+        ===================================================== */
+
+        .values {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .value {
+            padding: 30px;
+
+            background: #0c1710;
+
+            border: 1px solid #26372b;
+
+            border-radius: 14px;
+
+            transition: 0.3s;
+        }
+
+        .value:hover {
+            transform: translateY(-6px);
+            border-color: #766438;
+        }
+
+        .value-number {
+            color: #d9bd70;
+
+            font-size: 13px;
+
+            margin-bottom: 30px;
+        }
+
+        .value h3 {
+            font-size: 20px;
+
+            margin-bottom: 12px;
+        }
+
+        .value p {
+            color: #89938b;
+
+            line-height: 1.6;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           GALLERY
+        ===================================================== */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr 1fr;
+
+            grid-auto-rows: 250px;
+
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+
+            overflow: hidden;
+
+            border-radius: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #17271d,
+                    #0b130e
+                );
+
+            border: 1px solid #26372b;
+        }
+
+        .gallery-item.large {
+            grid-row: span 2;
+        }
+
+        .gallery-item::before {
+            content: "FLY FISH";
+
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 30px;
+
+            font-weight: 900;
+
+            letter-spacing: 5px;
+
+            color: rgba(217,189,112,0.18);
+
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover::before {
+            color: rgba(217,189,112,0.5);
+
+            transform: scale(1.08);
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-box {
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 80px 40px;
+
+            border-radius: 24px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(217,189,112,0.12),
+                    transparent 55%
+                ),
+                #0c1710;
+
+            border: 1px solid #26372b;
+        }
+
+        .contact-box h2 {
+            font-size: clamp(42px, 6vw, 70px);
+
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            max-width: 600px;
+
+            margin: 0 auto 35px;
+
+            color: #929b93;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 40px 8%;
+
+            border-top: 1px solid #1c2b21;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            color: #68736b;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: #d9bd70;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .values {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-item.large {
+                grid-row: span 1;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 85px 5%;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero h1 {
+                letter-spacing: -3px;
+            }
+
+            .values {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 220px;
+            }
+
+            .about-visual {
+                min-height: 350px;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGACJA
+========================================================= -->
+
+<nav>
+
+    <a href="#home" class="logo">
+        FLY <span>FISH</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Start</a>
+        </li>
+
+        <li>
+            <a href="#lures">Przynęty</a>
+        </li>
+
+        <li>
+            <a href="#about">O Adamie</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Galeria</a>
+        </li>
+
+        <li>
+            <a href="#contact">Kontakt</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Handmade Fishing Lures
+        </div>
+
+        <h1>
+            FLY<br>
+            <span>FISH.</span>
+        </h1>
+
+        <p class="hero-description">
+            Ręcznie tworzone przynęty dla ludzi,
+            którzy nad wodą szukają czegoś więcej.
+            Precyzja, charakter i pasja zamknięte
+            w każdej przynęcie.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#lures"
+                class="button button-primary"
+            >
+                Zobacz przynęty
+            </a>
+
+            <a
+                href="#about"
+                class="button button-outline"
+            >
+                Poznaj FLY FISH
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRZYNĘTY
+========================================================= -->
+
+<section id="lures">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Kolekcja
+        </div>
+
+        <h2>
+            Przynęty tworzone<br>
+            z pasją.
+        </h2>
+
+        <p>
+            Poznaj główne rodzaje przynęt związane
+            z marką FLY FISH.
+        </p>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <article class="product">
+
+            <div class="product-image">
+                🪶
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Streamery
+                </h3>
+
+                <p>
+                    Przynęty tworzone z myślą
+                    o drapieżnikach i wymagających
+                    warunkach nad wodą.
+                </p>
+
+                <a href="#contact" class="product-link">
+                    Dowiedz się więcej →
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="product">
+
+            <div class="product-image">
+                🎣
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Micro Jigi
+                </h3>
+
+                <p>
+                    Małe konstrukcje, duża precyzja.
+                    Idealne do finezyjnego łowienia.
+                </p>
+
+                <a href="#contact" class="product-link">
+                    Dowiedz się więcej →
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article class="product">
+
+            <div class="product-image">
+                🪝
+            </div>
+
+            <div class="product-info">
+
+                <h3>
+                    Jigi
+                </h3>
+
+                <p>
+                    Klasyczna forma połączona
+                    z ręcznym wykonaniem i dbałością
+                    o każdy szczegół.
+                </p>
+
+                <a href="#contact" class="product-link">
+                    Dowiedz się więcej →
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     O ADAMIE
+========================================================= -->
+
+<section id="about">
+
+    <div class="about">
+
+
+        <div class="about-visual">
+            🎣
+        </div>
+
+
+        <div class="about-text">
+
+            <div class="section-label">
+                FLY FISH
+            </div>
+
+            <h2>
+                Pasja zaczyna się
+                nad wodą.
+            </h2>
+
+            <p>
+                Za marką FLY FISH stoi Adam Słowik —
+                twórca ręcznie wykonywanych przynęt
+                wędkarskich.
+            </p>
+
+            <p>
+                Każda przynęta jest efektem połączenia
+                doświadczenia, kreatywności oraz
+                zainteresowania wędkarstwem.
+            </p>
+
+            <div class="quote">
+                „Nie chodzi tylko o przynętę.
+                Chodzi o moment, kiedy pojawia się branie.”
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     WARTOŚCI
+========================================================= -->
+
+<section>
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Dlaczego FLY FISH?
+        </div>
+
+        <h2>
+            Każdy detal ma znaczenie.
+        </h2>
+
+    </div>
+
+
+    <div class="values">
+
+
+        <div class="value">
+
+            <div class="value-number">
+                01
+            </div>
+
+            <h3>
+                Ręczne wykonanie
+            </h3>
+
+            <p>
+                Dbałość o szczegóły na każdym etapie
+                tworzenia przynęty.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-number">
+                02
+            </div>
+
+            <h3>
+                Precyzja
+            </h3>
+
+            <p>
+                Liczy się odpowiedni kształt,
+                proporcje i wykończenie.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-number">
+                03
+            </div>
+
+            <h3>
+                Charakter
+            </h3>
+
+            <p>
+                Każda przynęta może mieć
+                swój własny charakter.
+            </p>
+
+        </div>
+
+
+        <div class="value">
+
+            <div class="value-number">
+                04
+            </div>
+
+            <h3>
+                Pasja
+            </h3>
+
+            <p>
+                Wszystko zaczyna się od
+                prawdziwej pasji do wędkarstwa.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALERIA
+========================================================= -->
+
+<section id="gallery">
+
+    <div class="section-header">
+
+        <div class="section-label">
+            Galeria
+        </div>
+
+        <h2>
+            FLY FISH nad wodą.
+        </h2>
+
+        <p>
+            Tutaj możesz później wstawić prawdziwe
+            zdjęcia przynęt, ryb oraz pracy Adama.
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item large"></div>
+
+        <div class="gallery-item"></div>
+
+        <div class="gallery-item"></div>
+
+        <div class="gallery-item"></div>
+
+        <div class="gallery-item"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     KONTAKT
+========================================================= -->
+
+<section id="contact" class="contact-section">
+
+    <div class="contact-box">
+
+        <div class="section-label">
+            Kontakt
+        </div>
+
+        <h2>
+            Masz pytanie?
+        </h2>
+
+        <p>
+            Chcesz dowiedzieć się więcej o przynętach,
+            współpracy lub dostępnych produktach?
+            Skontaktuj się z FLY FISH.
+        </p>
+
+        <a
+            href="mailto:kontakt@flyfish.pl"
+            class="button button-primary"
+        >
+            Napisz wiadomość
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div>
+        © 2026 <strong>FLY FISH</strong>
+    </div>
+
+    <div>
+        Handmade Fishing Lures
+    </div>
+
+</footer>
+
+
+</body>
+</html>
